@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Sentence Generator</title>
+    <style>
+    .container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
+
+#output {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Click the button to generate a random sentence:</h1>
+      <button id="generate-btn">Generate</button>
+      <p id="output"></p>
+    </div>
+    <script>
+    const sentences = [
+  "The quick brown fox jumps over the lazy dog.",
+  "She sells seashells by the seashore.",
+  "Peter Piper picked a peck of pickled peppers.",
+  "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+  "I scream, you scream, we all scream for ice cream!"
+];
+
+const generateBtn = document.getElementById("generate-btn");
+const output = document.getElementById("output");
+
+generateBtn.addEventListener("click", function() {
+  const randomIndex = Math.floor(Math.random() * sentences.length);
+  output.textContent = sentences[randomIndex];
+});
+
+    </script>
+  </body>
+</html>
